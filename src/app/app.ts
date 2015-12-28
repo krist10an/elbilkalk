@@ -1,22 +1,28 @@
-import {bootstrap} from 'angular2/platform/browser'
-/*
-import {Component} from 'angular2/core'
+import {Component, View} from 'angular2/core';
+import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/core';
+
+import {Home} from '../home/home.ts';
+
+//let template = require('./app.html');
+
 
 @Component({
-  selector: 'app',
-  template: `{{message}}`
+  selector: 'app'
 })
-export class AppComponent {
-  message: string;
-
-  constructor() {
-    var that = this
-    that.message = 'Hello World'
+@View({
+//  template: template,
+  template:`
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+  `,
+  directives: [ ROUTER_DIRECTIVES ]
+})
+@RouteConfig([
+  { path: '/',       redirectTo: '/home' },
+  { path: '/home',   as: 'Home',   component: Home },
+])
+export class App {
+  constructor(public router: Router) {
   }
 }
-
-bootstrap(AppComponent)
-*/
-import {AppComponent} from './app.component.ts';
-
-bootstrap(AppComponent);
