@@ -8,7 +8,6 @@ import {Home} from '../home/home.ts';
 })
 @View({
   template:`
-  <h2>Hello Typescript</h2>
 <div class="container">
   <router-outlet></router-outlet>
 </div>
