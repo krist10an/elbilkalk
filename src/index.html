@@ -9,9 +9,10 @@
     <!-- build:css -->
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <!-- endbuild -->
-
+    <base href="/">
   </head>
   <body>
+    <h3>Hello</h3>
     <app></app>
 
     <!-- These are the necessary angular2 development files. Don't put your own files here or they won't be included in production. -->
@@ -21,15 +22,17 @@
     <script src="../node_modules/typescript/lib/typescript.js"></script>
     <script src="../node_modules/rxjs/bundles/Rx.js"></script>
     <script src="../node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script src="../node_modules/angular2/bundles/router.dev.js"></script>
     <script src="../node_modules/angular2/bundles/http.dev.js"></script>
     <script>
       System.config({
         transpiler: 'typescript',
         typescriptOptions: { emitDecoratorMetadata: true }
       });
-      System.import('./index.ts');
+      System.import('./index.ts')
+        .then(null, console.error.bind(console));
     </script>
-    <script src="http://localhost:35729/livereload.js"></script>
+    <!--script src="//localhost:35729/livereload.js"></script-->
     <!-- endbuild -->
 
   </body>

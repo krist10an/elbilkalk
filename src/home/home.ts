@@ -1,14 +1,11 @@
-import {Component, View, CORE_DIRECTIVES} from 'angular2/core';
+import {Component, View} from 'angular2/core';
 /*
 let styles = require('./home.css');
 let template = require('./home.html');
 */
 
 @Component({
-  selector: 'home'
-})
-@View({
-  directives: [CORE_DIRECTIVES],
+  //directives: [CORE_DIRECTIVES],
   //template: template,
   //styles: [styles]
   template: `
@@ -16,6 +13,13 @@ let template = require('./home.html');
 <h1>Welcome</h1>
 <p class="red">Red</p>
 </div>`
+  styles: [ `
+  .red {
+  color: red;
+  }`
+  ]
 })
+
 export class Home {
+//  tall: number;
 }

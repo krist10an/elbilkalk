@@ -1,15 +1,11 @@
 import { bootstrap } from 'angular2/platform/browser';
 import { FORM_PROVIDERS } from 'angular2/core';
-import { HTTP_PROVIDERS } from 'angular2/http';
-import { ROUTER_PROVIDERS } from 'angular2/core';
+//import { HTTP_PROVIDERS } from 'angular2/http';
+import { ROUTER_PROVIDERS } from 'angular2/router';
 
-import { App } from './app/app';
+console.log("bootstrap");
+import { App } from './app/app.ts';
 
 bootstrap(
-  App,
-  [
-    FORM_PROVIDERS,
-    ROUTER_PROVIDERS,
-    HTTP_PROVIDERS
-  ]
+  App, [ ROUTER_PROVIDERS ]
 );

@@ -1,17 +1,14 @@
 import {Component, View} from 'angular2/core';
-import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/core';
+import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
 import {Home} from '../home/home.ts';
-
-//let template = require('./app.html');
-
 
 @Component({
   selector: 'app'
 })
 @View({
-//  template: template,
   template:`
+  <h2>Hello Typescript</h2>
 <div class="container">
   <router-outlet></router-outlet>
 </div>
@@ -19,10 +16,8 @@ import {Home} from '../home/home.ts';
   directives: [ ROUTER_DIRECTIVES ]
 })
 @RouteConfig([
-  { path: '/',       redirectTo: '/home' },
-  { path: '/home',   as: 'Home',   component: Home },
+//  { path: '/',       redirectTo: '/home' },
+  { path: '/',   as: 'Home',   component: Home },
 ])
 export class App {
-  constructor(public router: Router) {
-  }
 }
