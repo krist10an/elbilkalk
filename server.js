@@ -6,7 +6,10 @@ var app = express()
 app.use(morgan('dev'))
 
 app.use('/node_modules', express.static(__dirname + '/node_modules'))
-app.use('/', express.static(__dirname + '/src'))
+app.use('/bower_components', express.static(__dirname + '/bower_components'))
+app.use('/', express.static(__dirname + '/src', {
+    extensions: ['ts']
+}))
 
 app.listen(process.env.PORT, process.env.IP)
 console.log('Listening on port ', process.env.PORT, process.env.IP)
