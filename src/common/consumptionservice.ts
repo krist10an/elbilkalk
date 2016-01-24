@@ -8,7 +8,6 @@ export class CalcService {
     private _carService: CarService,
     private _unitPreference: UnitPreference
    ) {
-     console.log("Calc service")
   }
 
   unitName() {

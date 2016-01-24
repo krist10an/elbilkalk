@@ -1,0 +1,15 @@
+
+<legend><i class="fa fa-road fa-lg"></i> Berenge kjørelengde</legend>
+
+<label>SOC </label>
+<input [(ngModel)]="cons.soc" placeholder="name"/>
+<br/>
+<label>Kjørelengde </label>
+<input [(ngModel)]="cons.distance" placeholder="name"/>
+<br/>
+<label>Forbruk </label>
+<input [(ngModel)]="cons.consumption" placeholder="name"/>
+
+<p>{{calculate()|number:'.1-1'}} {{unitName()}}</p>
+
+<soc-view soc="{{cons.distance}}"></soc-view>
