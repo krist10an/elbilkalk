@@ -1,0 +1,37 @@
+<html>
+<head>
+  <title>Elbilkalk Unit Tests</title>
+  <link rel="stylesheet" href="../node_modules/jasmine-core/lib/jasmine-core/jasmine.css">
+  <script src="../node_modules/jasmine-core/lib/jasmine-core/jasmine.js"></script>
+  <script src="../node_modules/jasmine-core/lib/jasmine-core/jasmine-html.js"></script>
+  <script src="../node_modules/jasmine-core/lib/jasmine-core/boot.js"></script>
+
+  <script src="../node_modules/systemjs/dist/system.src.js"></script>
+  <script src="../node_modules/typescript/lib/typescript.js"></script>
+  <base href="/">
+</head>
+<body>
+    <script src="../node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="../node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="../node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script src="../node_modules/angular2/bundles/router.dev.js"></script>
+    <script src="../node_modules/angular2/bundles/http.dev.js"></script>
+
+<script>
+  System.config({
+    transpiler: 'typescript',
+    typescriptOptions: { emitDecoratorMetadata: true }
+  });
+  // Import spec directly
+  System.import('./common/carservice.spec.ts')
+  System.import('./common/unitpreferenceservice.spec.ts')
+  // #4. wait for all imports to load ...
+  //     then re-execute `window.onload` which
+  //     triggers the Jasmine test-runner start
+  //     or explain what went wrong
+    .then(window.onload)
+    .catch(console.error.bind(console));
+</script>
+
+</body>
+</html>
