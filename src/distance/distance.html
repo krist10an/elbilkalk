@@ -1,15 +1,35 @@
 
-<legend><i class="fa fa-road fa-lg"></i> Berenge kjørelengde</legend>
+<form ng-submit="submit()">
+  <md-radio-group [(value)]="selected" *ngFor="#item of meny">
+    <md-radio-button value="{{item.id}}"
+        class="md-primary"
+        [checked]="selected == item.id"
+        >{{item.name}}</md-radio-button>
+  </md-radio-group>
 
-<label>SOC </label>
-<input [(ngModel)]="cons.soc" placeholder="name"/>
-<br/>
-<label>Kjørelengde </label>
-<input [(ngModel)]="cons.distance" placeholder="name"/>
-<br/>
-<label>Forbruk </label>
-<input [(ngModel)]="cons.consumption" placeholder="name"/>
+<div>
+    <legend><i class="fa fa-{{current().icon}} fa-lg"></i> Berenge {{current().name}}</legend>
+</div>
 
-<p>{{calculate()|number:'.1-1'}} {{unitName()}}</p>
+<hr/>
 
-<soc-view soc="{{cons.distance}}"></soc-view>
+<div layout-gt-sm="row">
+  <md-input-container class="md-block" flex-gt-sm *ngIf="current().soc">
+    <label>State of charge (%)</label>
+    <input md-input [(ngModel)]="cons.soc">
+  </md-input-container>
+  <md-input-container class="md-block" flex-gt-sm *ngIf="current().dist">
+    <label>Kjørelengde (km)</label>
+    <input md-input [(ngModel)]="cons.distance">
+  </md-input-container>
+  <md-input-container class="md-block" flex-gt-sm *ngIf="current().consum">
+    <label>Forbruk (kWh/100km)</label>
+    <input md-input [(ngModel)]="cons.consumption">
+  </md-input-container>
+</div>
+
+</form>
+
+<result-view name="{{current().name}}" result="{{calculate()|number:'.1-1'}}" unit="{{unitName()}}"></result-view>
+
+<p>&nbsp;</p>

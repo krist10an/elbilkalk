@@ -8,7 +8,9 @@
     "start": "node server",
     "build": "gulp build"
   },
-  "dependencies": {},
+  "dependencies": {
+    "ng2-material": "^0.1.8"
+  },
   "devDependencies": {
     "angular2": "^2.0.0-beta.0",
     "del": "^2.0.2",

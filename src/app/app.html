@@ -1,3 +1,28 @@
-<div class="container">
+<md-content>
+    
+    <md-toolbar>
+    <div class="md-toolbar-tools">
+      <button md-button class="md-icon-button" aria-label="Settings" (click)="clicked('Menu')">
+        <i md-icon>menu</i>
+      </button>
+      <h2>
+        <span><i class="fa fa-car fa-md"></i> <a [routerLink]="['Home']">Elbilkalkulator</a> </span>
+      </h2>
+
+
+      <span flex>
+      <a [routerLink]="['Distance']">Beregn</a>
+      </span>
+
+      <button md-button class="md-icon-button" aria-label="Favorite" (click)="clicked('Favorite')">
+        <i class="green" md-icon>favorite</i>
+      </button>
+      <button md-button class="md-icon-button" aria-label="More" (click)="clicked('Show More')">
+        <i md-icon>more_vert</i>
+      </button>
+    </div>
+  </md-toolbar>
+
   <router-outlet></router-outlet>
-</div>
+
+</md-content>

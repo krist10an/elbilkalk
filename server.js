@@ -5,6 +5,7 @@ var livereload = require('livereload')
 var app = express()
 app.use(morgan('dev'))
 
+app.use('/ng2-material', express.static(__dirname + '/node_modules/ng2-material', { extensions: ['js']}))
 app.use('/node_modules', express.static(__dirname + '/node_modules'))
 app.use('/bower_components', express.static(__dirname + '/bower_components'))
 app.use('/', express.static(__dirname + '/src', {
