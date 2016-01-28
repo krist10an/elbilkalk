@@ -32,7 +32,9 @@
         typescriptOptions: { emitDecoratorMetadata: true }
       });
       System.import('./index.ts')
-        .then(null, console.error.bind(console));
+        .then(null)
+        .catch(console.error.bind(console));
+
     </script>
     <!--script src="//localhost:35729/livereload.js"></script-->
     <!-- endbuild -->

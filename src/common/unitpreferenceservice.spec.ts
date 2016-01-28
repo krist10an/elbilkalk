@@ -4,7 +4,8 @@ import {ConsumptionUnit} from './unitpreferenceservice'
 describe('UnitPreference kWh', function() {
     var up;
     beforeEach(function() {
-      up = new UnitPreference(ConsumptionUnit.Kwh);
+      up = new UnitPreference();
+      up.setUnit(ConsumptionUnit.KWH);
     });
     afterEach(function() {
       up = null;
@@ -24,7 +25,8 @@ describe('UnitPreference kWh', function() {
 describe('UnitPreference wh', function() {
     var up;
     beforeEach(function() {
-      up = new UnitPreference(ConsumptionUnit.Wh);
+      up = new UnitPreference();
+      up.setUnit(ConsumptionUnit.WH);
     });
     afterEach(function() {
       up = null;

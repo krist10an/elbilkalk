@@ -1,14 +1,18 @@
 import {Injectable} from 'angular2/core';
 
-export enum ConsumptionUnit { Kwh, Wh };
+export enum ConsumptionUnit { KWH, WH };
 
 @Injectable()
 export class UnitPreference {
   private conversion_factor: number;
   private name: string;
 
-  constructor(unit: ConsumptionUnit) {
-    if (unit == ConsumptionUnit.Wh) {
+  constructor() {
+    this.setUnit(ConsumptionUnit.KWH)
+  }
+
+  setUnit(unit: ConsumptionUnit) {
+    if (unit == ConsumptionUnit.WH) {
       // 1000 Wh/km == 1 kWh/km
       this.conversion_factor = 1000;
       this.name = "Wh/km"

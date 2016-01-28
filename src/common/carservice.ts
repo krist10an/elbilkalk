@@ -8,6 +8,12 @@ interface ICarCapacity {
 @Injectable()
 export class CarService implements ICarCapacity {
   capacity: number;
+
+
+  constructor() {
+    this.capacity = 21.2;
+  }
+
   constructor(capacity: number = 21.2) {
     this.capacity = capacity;
   }

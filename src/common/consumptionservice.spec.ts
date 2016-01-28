@@ -6,7 +6,9 @@ import {ConsumptionUnit} from './unitpreferenceservice'
 describe('CalcService', function() {
     var cs;
     beforeEach(function() {
-      cs = new CalcService(new CarService(20), new UnitPreference(ConsumptionUnit.Kwh));
+      var up = new UnitPreference()
+      up.setUnit(ConsumptionUnit.KWH);
+      cs = new CalcService(new CarService(20), up);
     });
     afterEach(function() {
       cs = null;
