@@ -8,7 +8,7 @@ describe('CalcService', function() {
     beforeEach(function() {
       var up = new UnitPreference()
       up.setUnit(ConsumptionUnit.KWH);
-      cs = new CalcService(new CarService(20), up);
+      cs = new CalcService(new CarService().setCapacity(20), up);
     });
     afterEach(function() {
       cs = null;

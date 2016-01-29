@@ -1,7 +1,13 @@
 import {Component} from 'angular2/core'
 
-export interface Consumption {
-  soc: number;
-  distance: number;
-  consumption: number;
+export class Consumption {
+  public soc: number;
+  public distance: number;
+  public consumption: number;
+
+  constructor(soc: number, consumption: number, distance: number) {
+    this.soc = soc;
+    this.consumption = consumption;
+    this.distance = distance;
+  }
 }

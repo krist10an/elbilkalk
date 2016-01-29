@@ -16,15 +16,15 @@
 <div layout-gt-sm="row">
   <md-input-container class="md-block" flex-gt-sm *ngIf="current().soc">
     <label>State of charge (%)</label>
-    <input md-input [(ngModel)]="cons.soc">
+    <input md-input [(ngModel)]="cons.soc" ngControl="ctrl_soc" #spy>
   </md-input-container>
   <md-input-container class="md-block" flex-gt-sm *ngIf="current().dist">
     <label>Kjørelengde (km)</label>
-    <input md-input [(ngModel)]="cons.distance">
+    <input md-input [(ngModel)]="cons.distance" ngControl="ctrl_dist">
   </md-input-container>
   <md-input-container class="md-block" flex-gt-sm *ngIf="current().consum">
     <label>Forbruk (kWh/100km)</label>
-    <input md-input [(ngModel)]="cons.consumption">
+    <input md-input [(ngModel)]="cons.consumption" ngControl="ctrl_cons">
   </md-input-container>
 </div>
 

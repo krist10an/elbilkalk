@@ -14,8 +14,9 @@ export class CarService implements ICarCapacity {
     this.capacity = 21.2;
   }
 
-  constructor(capacity: number = 21.2) {
-    this.capacity = capacity;
+  setCapacity(cap: number) {
+    this.capacity = cap;
+    return this
   }
 
   getCapacity() {

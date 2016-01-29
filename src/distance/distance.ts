@@ -37,16 +37,15 @@ export class DistanceComponent {
     {id: 2, name: "Lading",  icon: "bolt", soc: 0, dist: 1, consum: 1, unit: "%"},
     ];
   selected: any = 0;
-
-  cons: Consumption = { 'soc': 100, 'distance': 150, 'consumption': 12 };
+  cons: Consumption;
 
   constructor(private _calcService: CalcService) {
+    this.cons = new Consumption(100, 12, 150);
   }
 
   current() {
     return this.meny[this.selected];
   }
-
 
   calculate() {
     if this.selected == 0 {
