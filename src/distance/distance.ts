@@ -9,8 +9,8 @@ import {CarService} from '../common/carservice'
   selector: 'result-view',
   template: `
     <md-whiteframe class="md-whiteframe-7dp" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout layout-align="center center">
-    <h4>{{name}} </h4>
-    <span>{{result}} {{unit}}</span>
+    <h4>Beregnet {{name}} </h4>
+    <span>{{result}}{{unit}}</span>
     </md-whiteframe>
   
     `
@@ -32,9 +32,9 @@ class ResultComponent {
 
 export class DistanceComponent {
   meny: any = [
-    {id: 0, name: "Avstand", icon: "car",  soc: 1, dist: 0, consum: 1, unit: "km"},
-    {id: 1, name: "Forbruk", icon: "plug", soc: 1, dist: 1, consum: 0, unit: this._calcService.unitName()},
-    {id: 2, name: "Lading",  icon: "bolt", soc: 0, dist: 1, consum: 1, unit: "%"},
+    {id: 0, name: "kjørelengde", icon: "car",  soc: 1, dist: 0, consum: 1, unit: "km"},
+    {id: 1, name: "maks forbruk", icon: "bolt", soc: 1, dist: 1, consum: 0, unit: this._calcService.unitName()},
+    {id: 2, name: "ladenivå",  icon: "plug", soc: 0, dist: 1, consum: 1, unit: "%"},
     ];
   selected: any = 0;
   cons: Consumption;

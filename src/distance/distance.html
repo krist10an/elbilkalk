@@ -4,18 +4,18 @@
     <md-radio-button value="{{item.id}}"
         class="md-primary"
         [checked]="selected == item.id"
-        >{{item.name}}</md-radio-button>
+        ><i class="fa fa-{{item.icon}} fa-md"></i> Beregne {{item.name}}</md-radio-button>
   </md-radio-group>
 
 <div>
-    <legend><i class="fa fa-{{current().icon}} fa-lg"></i> Berenge {{current().name}}</legend>
+    <legend><i class="fa fa-{{current().icon}} fa-lg"></i> Beregne {{current().name}}</legend>
 </div>
 
 <hr/>
 
 <div layout-gt-sm="row">
   <md-input-container class="md-block" flex-gt-sm *ngIf="current().soc">
-    <label>State of charge (%)</label>
+    <label>Ladenivå (SOC) (%)</label>
     <input md-input [(ngModel)]="cons.soc" ngControl="ctrl_soc" #spy>
   </md-input-container>
   <md-input-container class="md-block" flex-gt-sm *ngIf="current().dist">
