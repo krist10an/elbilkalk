@@ -4,7 +4,7 @@ import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
 import {Home} from '../home/home';
 import {DistanceComponent} from '../distance/distance'
-import {MATERIAL_DIRECTIVES} from 'ng2-material/all';
+import {MATERIAL_DIRECTIVES, SidenavService, Media} from 'ng2-material/all';
 
 @Component({
   selector: 'app'
@@ -19,7 +19,19 @@ import {MATERIAL_DIRECTIVES} from 'ng2-material/all';
   { path: '/distance',   as: 'Distance',   component: DistanceComponent },
 ])
 export class App {
+  constructor(public sidenav:SidenavService) {
+  }
+
   clicked(message: string) {
     alert(message);
+  }
+  hasMedia(breakSize:string):boolean {
+    return Media.hasMedia(breakSize);
+  }
+  open(name:string) {
+    this.sidenav.show(name);
+  }
+  close(name:string) {
+    this.sidenav.hide(name);
   }
 }

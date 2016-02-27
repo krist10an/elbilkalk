@@ -9,7 +9,7 @@
     "build": "gulp build"
   },
   "dependencies": {
-    "ng2-material": "^0.1.8"
+    "ng2-material": "^0.2.1"
   },
   "devDependencies": {
     "angular2": "^2.0.0-beta.0",
