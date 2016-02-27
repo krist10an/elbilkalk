@@ -6,28 +6,27 @@
   <md-sidenav name="left" [style]="side">
 -->
     <md-toolbar class="md-theme-indigo">
-      <h1 class="md-toolbar-tools">Sidenav Left</h1>
+      <h1 class="md-toolbar-tools">Navigator</h1>
     </md-toolbar>
     <md-content layout-padding>
       <button md-raised-button (click)="close('left')" class="md-primary" hide-gt-md>
-        Close Sidenav Left
+        Close
       </button>
 
       <ul>
         <li><i class="fa fa-car fa-md"></i> <a [routerLink]="['Home']">Elbilkalkulator</a> </li>
-        <li><i class="fa fa-calc fa-md"></i> <a [routerLink]="['Distance']">Beregn</a></li>
+        <li><i class="fa fa-calculator fa-md"></i> <a [routerLink]="['Distance']">Beregn</a></li>
 
       </ul>
 
       <p hide-md show-gt-md>
-        This sidenav is locked open on your device. To go back to the default behavior,
-        narrow your display.
+        This sidenav is locked open on your device.
       </p>
     </md-content>
   </md-sidenav>
-</md-sidenav-container>
 
-<md-content flex layout-padding>
+<md-content flex>
+  <div layout="column" layout-fill layout-align="top center">
     <md-toolbar>
     <div class="md-toolbar-tools">
       <button md-button class="md-icon-button" aria-label="Settings" (click)="open('left')">
@@ -51,9 +50,13 @@
     </div>
   </md-toolbar>
 
-<div class="inset">
-  <router-outlet></router-outlet>
+  <div class="inset">
+    <router-outlet></router-outlet>
+  </div>
+
 </div>
 </md-content>
+
+</md-sidenav-container>
 
 </div>
