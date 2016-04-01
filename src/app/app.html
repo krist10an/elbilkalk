@@ -2,9 +2,6 @@
 
 <md-sidenav-container layout="row" flex>
   <md-sidenav name="left" [style]="hasMedia('gt-sm') ? 'side' : 'over'">
-<!--
-  <md-sidenav name="left" [style]="side">
--->
     <md-toolbar class="md-theme-indigo">
       <h1 class="md-toolbar-tools">Navigator</h1>
     </md-toolbar>
@@ -29,6 +26,7 @@
   <div layout="column" layout-fill layout-align="top center">
     <md-toolbar>
     <div class="md-toolbar-tools">
+
       <button md-button class="md-icon-button" aria-label="Settings" (click)="open('left')">
         <i md-icon>menu</i>
       </button>
@@ -36,9 +34,7 @@
         <span><i class="fa fa-car fa-md"></i> <a [routerLink]="['Home']">Elbilkalkulator</a> </span>
       </h2>
 
-
       <span flex>
-      <a [routerLink]="['Distance']">Beregn</a>
       </span>
 
       <button md-button class="md-icon-button" aria-label="Favorite" (click)="clicked('Favorite')">
